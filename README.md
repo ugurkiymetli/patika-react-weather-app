@@ -1,5 +1,5 @@
 # Weather App with ReactJS - Patika.dev ReactJS - Project #3
-
+[![ssb1e7f56481bb508b.md.png](https://s9.gifyu.com/images/ssb1e7f56481bb508b.md.png)](https://gifyu.com/image/XPPb)
 ## API
 
 I used [Weatherbit](https://www.weatherbit.io/api/weather-forecast-16-day) API. Beacuse it was the only one I found that gives forecast data for more than 5 days.

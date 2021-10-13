@@ -1,10 +1,10 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { ApiProvider } from "../context/APIContext";
-import APIContext from "../context/APIContext";
+import { useCityName } from "../context/CityContext";
+
 function Weather() {
-  const API_KEY = useContext(APIContext);
-  const [cityName, setCityName] = useState("istanbul");
+  const API_KEY = "3fde3702425e4a829828152b3ee49305";
+  const { cityName } = useCityName();
   const [forecast, setForecast] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -20,11 +20,7 @@ function Weather() {
     <div>
       {isLoading && <div>Loading...</div>}
 
-      {forecast && (
-        <h2>
-          {forecast.city_name} - {forecast.country_code}{" "}
-        </h2>
-      )}
+      {forecast && <h2>{forecast.city_name}</h2>}
       {forecast &&
         forecast.data.map((item, index) => (
           <div key={index} className="forecast-card">
@@ -35,7 +31,7 @@ function Weather() {
               alt={item.weather.description}
             />
             <br />
-            <span style={{ color: "red" }}>{Math.round(item.max_temp)}°</span>-
+            <span style={{ color: "red" }}>{Math.round(item.max_temp)}°</span>/
             <span style={{ color: "blue" }}>{Math.round(item.min_temp)}°</span>
           </div>
         ))}

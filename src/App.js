@@ -1,12 +1,12 @@
 import "./App.css";
 import Container from "./components/Container";
-import { ApiProvider } from "./context/APIContext";
+import { CityNameProvider } from "./context/CityContext";
 function App() {
   return (
     <div className="App">
-      <ApiProvider>
+      <CityNameProvider>
         <Container />
-      </ApiProvider>
+      </CityNameProvider>
     </div>
   );
 }
